@@ -1,38 +1,64 @@
-<form>
+<h1 class="registerTitle">Register</h1>
+<form name="register" class="register" >
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <label for="firstName">First Name</label>
+      <input ngModel name="firstName" type="text" class="form-control" id="firstName" placeholder="First Name" required>
     </div>
-    <div class="form-group col-md-6">
-      <label for="Password">Password</label>
-      <input type="password" class="form-control" id="Password" placeholder="Password">
+      <div class="form-group col-md-6">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+      </div>
     </div>
-    <div class="form-group col-md-6">
-      <label for="confirmPassword">Confirm Password</label>
-      <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="Address">Address</label>
-    <input type="text" class="form-control" id="Address" placeholder="1234 Main St">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="City">City</label>
-      <input type="text" class="form-control" id="City">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="State">State</label>
-      <select id="State" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="Zip">Zip</label>
-      <input type="text" class="form-control" id="Zip">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Register</button>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" required>
+        </div>
+      </div>
+
+      <!-- <div class="form-row">
+        <div class="form-group col-md-12" 
+        [class.has-error]="email.invalid && email.touched"
+        [class.has-success]="email.valid">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="employee.email" #email="ngModel" required>
+          <span class="help-block" *ngIf="email.invalid && email.touched">Email is required</span>
+        </div>
+      </div> -->
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Password" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Address">Address</label>
+        <input type="text" class="form-control" id="Address" placeholder="1234 Main St" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="City">City</label>
+          <input type="text" class="form-control" id="City" required>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="State">State</label>
+          <select id="State" class="form-control" required>
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="Zip">Zip</label>
+          <input type="text" class="form-control" id="Zip" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
 </form>
+

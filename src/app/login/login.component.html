@@ -2,7 +2,8 @@
 <form>
   <div class="form-group">
     <label for="emailLogin">Email address</label>
-    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+    <input ngModel name="email" type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
+    <div class="error error-danger"></div>
   </div>
   <div class="form-group">
     <label for="loginPassword">Password</label>
@@ -10,4 +11,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<a routerLink="/register">New User?</a>
+<a routerLink="/registerUser">New User?</a>
