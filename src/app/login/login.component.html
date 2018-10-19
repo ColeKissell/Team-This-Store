@@ -2,12 +2,13 @@
 <form>
   <div class="form-group">
     <label for="emailLogin">Email address</label>
-    <input ngModel name="email" type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
-    <div class="error error-danger"></div>
+    <input name="email" type="email" class="form-control" id="loginEmail" placeholder="Enter email" [(ngModel)]="model.email" #email="ngModel" required>
+    <div class="alert alert-danger" *ngIf="email.invalid && email.touched">Email is required</div>
   </div>
   <div class="form-group">
     <label for="loginPassword">Password</label>
-    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+    <input name="email" type="password" class="form-control" id="loginPassword" placeholder="Password" [(ngModel)]="model.password" #password="ngModel" required>
+    <div class="alert alert-danger" *ngIf="password.invalid && password.touched">Password is required</div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
